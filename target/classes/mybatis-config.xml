@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置typeAlias -->
+	<typeAliases>
+		<!-- 自动为指定包下的model设置别名，默认类名首字母小写，也可用@Alias注解指定类别名 -->
+		<package name="com.nywl.model"></package>
+	</typeAliases>
+	<!-- 配置拦截器分页插件（可选择在mybatis.xml或spring.xml中配置，二选一） -->
+	<!-- <plugins>
+        com.github.pagehelper为PageHelper类所在包名
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+        	1.默认情况下会使用 PageHelper 方式进行分页
+        	如果想要实现自己的分页逻辑，可以实现 Dialect(com.github.pagehelper.Dialect) 接口，然后配置该属性为实现类的全限定名称。
+            <property name="dialect" value="mysql" />
+            2.默认值为 false，该参数对使用 RowBounds 作为分页参数时有效。
+            当该参数设置为 true 时，会将 RowBounds 中的 offset 参数当成 pageNum 使用，可以用页码和页面大小两个参数进行分页。
+            <property name="offsetAsPageNum" value="true" />
+            3.默认值为false，该参数对使用 RowBounds 作为分页参数时有效。
+            当该参数设置为true时，使用 RowBounds 分页会进行 count 查询。
+            <property name="rowBoundsWithCount" value="true" />
+            4.设置为true时，如果pageSize=0或者RowBounds.limit = 0就会查询出全部的结果
+            （相当于没有执行分页查询，但是返回结果仍然是Page类型）
+            <property name="pageSizeZero" value="true" />
+            5.版本3.3.0可用 - 分页参数合理化，默认false禁用
+            启用合理化时，如果pageNum<1会查询第一页，如果pageNum>pages会查询最后一页
+            禁用合理化时，如果pageNum<1或pageNum>pages会返回空数据
+            <property name="reasonable" value="false" />
+            6.支持使用参数方式配置，与params一起使用
+            <property name="supportMethodsArguments" value="true"/>
+            7.版本3.5.0可用 - 为了支持startPage(Object params)方法
+            增加了一个`params`参数来配置参数映射，用于从Map或ServletRequest中取值
+            可以配置pageNum,pageSize,count,pageSizeZero,reasonable,不配置映射的用默认值
+            不理解该含义的前提下，不要随便复制该配置
+            <property name="params" value="pageNum=start;pageSize=limit;" />
+            always总是返回PageInfo类型,check检查返回类型是否为PageInfo,none返回Page
+            <property name="returnPageInfo" value="check" />
+        </plugin>
+    </plugins> -->
+</configuration>
